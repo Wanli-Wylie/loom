@@ -1,0 +1,6 @@
+version: 1.0.0
+status: draft
+compatibility:
+  policy: semver
+  mathematical_semantics: locked
+default_impl: fortran-lapack

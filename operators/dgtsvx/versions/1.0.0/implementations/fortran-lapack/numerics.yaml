@@ -1,0 +1,13 @@
+precision_model:
+  scalar: double_precision
+  arithmetic: IEEE-754 binary64
+conditioning_assumptions:
+  - RCOND is used as the main condition indicator for A.
+  - When INFO = N+1, A can be numerically singular at working precision.
+tolerance_policy:
+  ferr:
+    interpretation: forward error upper bound per right-hand side
+    expected: nonnegative
+  berr:
+    interpretation: componentwise backward error per right-hand side
+    expected: nonnegative

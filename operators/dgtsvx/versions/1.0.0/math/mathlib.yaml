@@ -1,0 +1,6 @@
+lean_version: v4.15.0
+mathlib_version: v4.15.0
+namespace: Loom.Operators.DGTSVX
+module_entrypoints:
+  - math/spec.lean
+  - math/theorems.lean

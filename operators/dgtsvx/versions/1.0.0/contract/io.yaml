@@ -1,0 +1,77 @@
+routine:
+  name: DGTSVX
+  family: LAPACK
+  language: fortran
+  calling_convention: f77-by-reference
+operator:
+  canonical_name: dgtsvx
+  equations:
+    - A * X = B
+    - A^T * X = B
+arguments:
+  - name: FACT
+    type: character*1
+    direction: in
+  - name: TRANS
+    type: character*1
+    direction: in
+  - name: N
+    type: integer
+    direction: in
+  - name: NRHS
+    type: integer
+    direction: in
+  - name: DL
+    type: double precision array
+    direction: in
+  - name: D
+    type: double precision array
+    direction: in
+  - name: DU
+    type: double precision array
+    direction: in
+  - name: DLF
+    type: double precision array
+    direction: inout
+  - name: DF
+    type: double precision array
+    direction: inout
+  - name: DUF
+    type: double precision array
+    direction: inout
+  - name: DU2
+    type: double precision array
+    direction: inout
+  - name: IPIV
+    type: integer array
+    direction: inout
+  - name: B
+    type: double precision array
+    direction: in
+  - name: LDB
+    type: integer
+    direction: in
+  - name: X
+    type: double precision array
+    direction: out
+  - name: LDX
+    type: integer
+    direction: in
+  - name: RCOND
+    type: double precision
+    direction: out
+  - name: FERR
+    type: double precision array
+    direction: out
+  - name: BERR
+    type: double precision array
+    direction: out
+  - name: WORK
+    type: double precision workspace
+    direction: workspace
+  - name: IWORK
+    type: integer workspace
+    direction: workspace
+  - name: INFO
+    type: integer
+    direction: out

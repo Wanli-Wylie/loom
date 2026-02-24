@@ -1,0 +1,13 @@
+derivation:
+  mapped_from: examples/dgtsvx.json
+  mapping_rule: .vibe/thoughts/0002-Operator-Layout.md
+  notes: "Seed metadata was split into operator identity, math, contract, implementation, and provenance artifacts."
+sources:
+  - id: local-example-dgtsvx
+    type: local_json
+    path: examples/dgtsvx.json
+    role: seed_metadata
+  - id: lapack-dgtsvx-routine
+    type: upstream_reference
+    citation: "LAPACK routine DGTSVX (real tridiagonal system solve with error bounds)"
+    role: semantic_origin

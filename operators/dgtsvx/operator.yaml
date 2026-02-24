@@ -1,0 +1,6 @@
+name: dgtsvx
+namespace: lapack.linalg
+owner: netlib-lapack
+license: BSD-3-Clause
+homepage: https://www.netlib.org/lapack/
+summary: Solve real tridiagonal linear systems with condition estimate and error bounds.
