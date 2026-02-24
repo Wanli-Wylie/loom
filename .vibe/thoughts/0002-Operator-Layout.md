@@ -90,7 +90,7 @@ Rule: implementation metadata can vary by language/runtime, but it must trace ba
 ## Multi-Language and Multi-Runtime Space
 The layout is intentionally open for heterogeneous execution:
 - `implementations/fortran-lapack/`
-- `implementations/python-numpy/`
+- `implementations/julia-linearalgebra/`
 - `implementations/cpp-eigen/`
 - `implementations/rust-ndarray/`
 - `implementations/cuda-custom/`

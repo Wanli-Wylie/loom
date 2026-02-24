@@ -7,7 +7,7 @@ An *operator* is a reusable unit of computation with:
 - a stable semantic intent (what the transformation means),
 - and an explicit effect boundary (what it may read or change outside its inputs/outputs).
 
-The goal is to make operators as easy to **publish, discover, install, version, verify, and reuse** as libraries are in systems like pip or uv—while staying neutral to languages, runtimes, and execution environments.
+The goal is to make operators as easy to **publish, discover, install, version, verify, and reuse** as libraries are in modern package ecosystems—while staying neutral to languages, runtimes, and execution environments.
 
 ## Why operators as first-class artifacts
 

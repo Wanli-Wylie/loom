@@ -1,0 +1,8 @@
+[package]
+name = "loom"
+version = "0.1.0"
+edition = "2021"
+description = "Filesystem-native operator manager for scientific computing."
+license = "MIT"
+
+[dependencies]
