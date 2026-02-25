@@ -1,61 +1,55 @@
-# Operator Package Manager: loom
+# loom 概览：面向地学知识生成的算子系统
 
-This project is a package manager for computational operators.
+地球观测系统每天都在产生海量数据，但“数据到知识”的链路在传统工程里往往碎片化且高度耦合。  
+`loom` 的核心目标不是再造一个脚本仓库，而是构建一个自然、自洽的地学计算框架：将遥感信息提取与地理空间规律挖掘统一在更高维抽象下，形成从“物理机理”到“时空应用”的完整逻辑闭环。
 
-An *operator* is a reusable unit of computation with:
-- a declared interface (inputs/outputs),
-- a stable semantic intent (what the transformation means),
-- and an explicit effect boundary (what it may read or change outside its inputs/outputs).
+## 系统核心问题
 
-The goal is to make operators as easy to **publish, discover, install, version, verify, and reuse** as libraries are in modern package ecosystems—while staying neutral to languages, runtimes, and execution environments.
+现有地学分析流程常见痛点包括：
+- 理论模型、算法实现、业务场景混写在一起，难以复用和演进；
+- 算法工程与地理科学研究之间存在语义断层；
+- 同一类时空问题缺乏统一表达，导致可验证性与可重现性不足。
 
-## Why operators as first-class artifacts
+`loom` 通过明确分层与标准化表达，将地学机理、计算执行和应用编排拆分为独立但可组合的系统能力。
 
-Modern software is increasingly built by assembling small transformations: data operators, scientific operators, media operators, ML operators, spatial operators, etc. These operators exist today, but they are often:
-- scattered across repos and scripts,
-- hard to search by capability or interface,
-- difficult to reproduce across machines and time,
-- coupled to a specific runtime or project structure,
-- and opaque to tooling (no machine-readable semantics or effects).
+## 三维架构设计
 
-Treating operators as first-class artifacts turns “a function somewhere” into “a managed object with identity, interface, semantics, and provenance”.
+系统将地学分析流程解耦为三个核心维度：
 
-## Core philosophy
+### 1. 算子声明（Operator Declarations）
 
-1) Semantics before implementation  
-An operator is defined by *what it does*, not by how it is currently implemented. Multiple implementations may exist for the same operator intent.
+算子声明用于确立遥感物理量与地理过程的语义边界，剥离底层计算环境和实现细节，专注表达：
+- 地学理论模型；
+- 传感器观测机制；
+- 数据之间的映射关系。
 
-2) Pure functions as the default anchor  
-The most stable form of computation is a deterministic transformation from inputs to outputs. When effects are unavoidable, they should be declared explicitly rather than hidden.
+这一层构成系统地学概念的“本体论”，定义“算子是什么、在地学上意味着什么”。
 
-3) Explicit boundaries enable composition  
-Clear interfaces and effect declarations make operators composable, testable, cacheable, replaceable, and analyzable.
+### 2. 算子实现（Operator Implementations）
 
-4) Reproducibility is a first-class requirement  
-Resolving “which operators” a project uses should be deterministic and auditable, enabling exact re-creation of a computational environment.
+算子实现是地学机理的工程化映射，承载可执行的计算过程，例如：
+- 定量反演算法；
+- 辐射/几何校正模型；
+- 空间拓扑运算。
 
-5) Tool-agnostic and language-agnostic  
-The system should not assume a single programming language, runtime, or deployment model. Operators are artifacts that can be executed in different contexts.
+这一层是驱动空间数据流转与状态转换的“计算引擎”，定义“算子如何被执行”。
 
-6) Minimal core, extensible ecosystem  
-The core focuses on identity, metadata, resolution, and reproducibility. Higher-level concerns (workflows, orchestration, scheduling, UI) should remain optional and pluggable.
+### 3. 分析案例（Analysis Cases）
 
-## What success looks like
+分析案例面向真实世界业务场景，将基础算子作为节点编排为有向无环图（DAG），用于响应具体时空分析任务，例如：
+- 植被碳汇估算；
+- 城市热岛演进分析；
+- 地表水体动态监测。
 
-- Operators can be searched by interface, domain tags, and declared properties.
-- Operators can be installed and pinned with reproducible resolution.
-- Operators can be composed safely because their boundaries are explicit.
-- Operators can evolve via versioning without breaking the ecosystem silently.
-- Operators can be compared, replaced, and verified based on declared semantics and effects.
-- A shared operator ecosystem emerges across projects and domains.
+这一层定义“算子如何被组织并用于解决问题”。
 
-## Non-goals
+## 设计目标与方法论价值
 
-- Not a workflow engine or orchestrator.
-- Not a new programming language.
-- Not a monolithic registry requirement; distribution models should remain flexible.
-- Not a replacement for existing package managers; it complements them by managing computational *units* rather than general-purpose libraries.
+“声明-实现-应用”三位一体的设计，旨在系统性打通底层算法工程与上层地理科学研究之间的壁垒。  
+在该框架下，系统持续沉淀为可演化的地学方法论图谱，而非一次性项目代码集合。
 
-## Guiding principle
+研究者可以在统一规范下复用标准算子，像组合基础“引理”一样组织分析流程，逐步推演解决复杂时空问题的“大定理”。
 
-Make computation modular by making operators manageable.
+## 预期结果
+
+`loom` 最终将提供一套可验证、可重现的地学研究范式，使科研工作重心从工程胶水与重复实现中释放出来，回归到地理规律的发现、解释与检验本身。

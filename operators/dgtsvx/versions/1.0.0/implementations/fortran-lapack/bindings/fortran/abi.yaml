@@ -1,7 +1,0 @@
-binding: fortran
-symbol: dgtsvx_
-linkage: external
-calling_convention: pass-by-reference
-notes:
-  - Character arguments follow Fortran compiler-specific hidden-length conventions.
-  - Workspace sizing follows LAPACK documentation for DGTSVX.
